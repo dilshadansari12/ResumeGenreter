@@ -1,13 +1,313 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+
+.button {
+  background-image: linear-gradient(#0dccea, #0d70ea);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  /* font-size: .9em; */
+  margin: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+/*  */
+
+
+
+
+/* CSS */
+
+
+
+
+.button1 {
+  align-items: center;
+  background-color: rgb(114 46 248);
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s, -webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.button-35:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}
+
+
+.background{
+  width: 430px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+}
+.background .shape{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape:first-child{
+  background: linear-gradient(
+      #1845ad,
+      #23a2f6
+  );
+  left: -80px;
+  top: -80px;
+}
+.shape:last-child{
+  background: linear-gradient(
+      to right,
+      #ff512f,
+      #f09819
+  );
+  right: -30px;
+  bottom: -80px;
+}
+
+
+
+form {
+  /* height: 520px; */
+  width: 400px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255,255,255,0.13);
+  position: relative;
+  /* transform: translate(-50%,-50%); */
+  /* top: 50%; */
+  /* left: 50%; */
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgb(8 7 16 / 60%);
+  padding: 50px 35px;
+}
+
+form *{
+  font-family: 'Poppins',sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+form h3{
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+
+label{
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+input{
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+::placeholder{
+  color: #e5e5e5;
+}
+button{
+  /* margin-top: 50px; */
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.social{
+margin-top: 30px;
+display: flex;
+}
+.social div{
+background: red;
+width: 150px;
+border-radius: 3px;
+padding: 5px 10px 10px 5px;
+background-color: rgba(255,255,255,0.27);
+color: #eaf0fb;
+text-align: center;
+}
+.social div:hover{
+background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+margin-left: 25px;
+}
+.social i{
+margin-right: 4px;
+}
+
+
+.Timg{
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: 100%        ;
+}
+
+
+.Timg:hover{
+  opacity: 0.2;
+}
+
+.overlay{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 18px;
+  text-align: center;
+  padding: 50% 0px;
+  font-weight: bold;
+  color: #fff;
+  text-transform:uppercase;
+  background-color: #0c0b19c7;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+
+
+}
+
+
+
+.Tdiv:hover .overlay{
+    opacity: 1;
+    /* top: 50%; */
+    /* color: black; */
+  }
+
+  .xyzz a{
+            font-weight: 500;
+            color: #62646a;
+  
+  }
+
+
+.userpic{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgb(116, 116, 222);
+  background-image: url("../public/img/user.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  overflow: hidden;
+  color: transparent;
+  outline: none;
+
+}
+
+.userpicinput {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  cursor: pointer;
+
+}
+
+.userpicinput::-webkit-file-upload-button{
+  visibility: hidden;
+}
+
+
+.fnjt input{
+    width: 200px;
+    border: 2px solid rgb(116, 116, 222);
+
+}
+
+.txa label {
+  margin-left: 60px;
+  margin-bottom: 11px;
+}
+.txa textarea{
+  margin-left: 20%;
+  transform: translate(-13%);
+  width: 85%;
+  height:120px;
+  padding:  10px;
+  border: 2px solid rgb(116, 116, 222);
+
+}
+
+.exper div{
+  width: 100%;
+  /* border: 2px solid rgb(116, 116, 222); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} 
+
+
+.exper div input{
+  width: 80%;
+  border: 2px solid rgb(116, 116, 222);
+
 }
