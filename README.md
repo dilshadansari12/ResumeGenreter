@@ -1,6 +1,6 @@
 
 
-![Demo image](img/demo.png)
+![Demo image](public/img/demo.png)
 
 
 Simple Resume Generator
@@ -18,5 +18,5 @@ A web browser with an internet connection
 Getting Started
 
 
-![Demo image](img/login.png)
-![Demo image](img/resume.png)
+![Demo image](public/img/login.png)
+![Demo image](public/img/resume.png);
