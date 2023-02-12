@@ -72,7 +72,7 @@ const Header = () => {
 
 
   return (
-    <div className='h-16 flex justify-around items-center ' style={{ background: " rgb(114,46,248)" }} >
+    <div className='h-16 flex justify-around items-center header' style={{ background: " rgb(114,46,248)" }} >
 
       <Link to="/" ><img src="img/logo.png" alt="logopng" height="80px" width="50px" /></Link>
 

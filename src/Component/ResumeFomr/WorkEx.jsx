@@ -67,7 +67,7 @@ const WorkEx = () => {
 
       <div className="flex justify-around items-center " >
 
-        <button onClick={() => { prevref("/resumenumber1/basicinfo") }} className="button" style={{ width: "100px" }} > <i className="fa-solid fa-arrow-left"></i> prev </button>
+        {/* <button onClick={() => { prevref("/resumenumber1/basicinfo") }} className="button" style={{ width: "100px" }} > <i className="fa-solid fa-arrow-left"></i> prev </button> */}
 
 
         <button onClick={Mysubmitework} className="button" style={{ width: "100px" }} >Next <i className="fa-solid fa-arrow-right"></i> </button>

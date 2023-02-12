@@ -91,7 +91,7 @@ const Projects = () => {
 
         <div className="flex justify-around items-center mt-5" >
 
-          <button onClick={() => { prevref("/resumenumber1/WorkEx") }} className="button" style={{ width: "100px" }} > <i className="fa-solid fa-arrow-left"></i> prev </button>
+          {/* <button onClick={() => { prevref("/resumenumber1/WorkEx") }} className="button" style={{ width: "100px" }} > <i className="fa-solid fa-arrow-left"></i> prev </button> */}
 
 
           <button onClick={Mysubmitedu} className="button" style={{ width: "100px" }} >Next <i className="fa-solid fa-arrow-right"></i> </button>

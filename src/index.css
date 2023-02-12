@@ -311,3 +311,28 @@ margin-right: 4px;
   border: 2px solid rgb(116, 116, 222);
 
 }
+
+
+
+/* media print */
+
+
+@media print{
+   
+  .header{
+    visibility:hidden;
+  }
+
+  .button{
+    visibility: hidden;
+  }
+
+  .prints{
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+
+  }
+
+}

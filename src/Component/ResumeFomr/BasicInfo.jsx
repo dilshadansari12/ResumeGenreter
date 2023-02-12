@@ -1,62 +1,43 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { First, Secand } from "../../App";
+import { First, Secand, Userimg } from "../../App";
 import { Storeg } from "../Firebase/Firebase";
 import { listAll, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { Watch } from "react-loader-spinner";
+import { Setusering } from "../../App";
 
 const BasicInfo = () => {
-  const refs = useRef("");
+
+  const SetUser = useContext(Setusering);
+  const bgimg = useRef();
   const BASIC = useContext(First);
   const SETBASIC = useContext(Secand);
-  const [userimage, setuserimage] = useState(null);
   const [loader, setloader] = useState(false);
   const [dowloadurl, setdownloadurl] = useState();
   const nav = useNavigate();
 
-  const imageupload = () => {
-    setloader(true)
-    if (userimage === null) {
-      return;
-    } else {
-      const imageref = ref(Storeg, `iamge/`);
-      uploadBytes(imageref, userimage).then((solve) => {
-      }).catch((eroor) => {
-        alert(eroor.message)
-      })
-
-    }
-  }
-
-  useEffect(() => {
-    imageupload();
-  }, [userimage]);
 
 
-  // 
+  // changing bg in input image
 
-  useEffect(() => {
-    if (dowloadurl) {
-      setloader(false);
-      ref.current.style.backgroundImage="dowloadurl"
-    }
-  }, [dowloadurl])
+  
+
+  const [image, setImage] = useState(null);
 
 
-  const imageref = ref(Storeg, "iamge/")
-  // acces a image
 
-  useEffect(() => {
-    listAll(imageref).then((res) => {
-      res.getDownloadURL(res).then((aaa) => {
-        setdownloadurl(aaa)
-      }).catch((err) => {
-        alert(err)
-      })
-    }).catch(() => {
-
-    })
-  })
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+  
+useEffect(()=>{
+  SetUser(image)
+},[image])
 
   const [basicinfo, editbasicinfo] = useState({
     name: "",
@@ -70,8 +51,6 @@ const BasicInfo = () => {
 
 
   const mychange = (e) => {
-
-    console.log(e.target.name)
 
     if (e.target.name === "name") {
       editbasicinfo({ name: e.target.value })
@@ -94,7 +73,6 @@ const BasicInfo = () => {
       editbasicinfo({ ...basicinfo, location: e.target.value })
 
     }
-
   }
 
 
@@ -103,23 +81,16 @@ const BasicInfo = () => {
     nav("/resumenumber1/WorkEx")
   }
 
-
-  // image upload 
-
-
-
-
-
-
-
-
-
   return (
     <div className="bg-white" style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", position: "relative" }} >
       <div className="w-full flex justify-center items-center flex-col pt-4 pb-4 " >
-        <div className='userpic' ref={refs} style={{ position: "relative" }} >
+        <div className='userpic' ref={bgimg} style={{ position: "relative" }} >
+          <img src={image} alt="sss" />
           {loader ? <div className="" style={{ position: "absolute", top: "30%", right: "30%" }} ><Watch width={80} height={80} color="black" /> </div> : ""}
-          <input type="file" className='userpicinput' onChange={(e) => { setuserimage(e.target.files[0]) }} />
+          <input type="file"
+            accept="image/*"
+            className='userpicinput'
+            onChange={handleImageChange} />
         </div>
 
 
@@ -170,5 +141,6 @@ const BasicInfo = () => {
     </div>
   )
 }
+
 
 export default BasicInfo

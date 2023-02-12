@@ -3,6 +3,7 @@
 ![Demo image](public/img/demo.png)
 
 
+
 Simple Resume Generator
 A web application that allows users to generate a basic resume .
 

@@ -1,6 +1,6 @@
 import Master from "./Master";
 import Header from "./Component/Header";
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const First = createContext();
 const Secand = createContext();
@@ -12,6 +12,8 @@ const Seven = createContext();
 const Eight = createContext();
 const Nine = createContext();
 const Ten = createContext();
+const Userimg = createContext();
+const Setusering = createContext();
 
 
 function App() {
@@ -21,8 +23,8 @@ function App() {
   const [EDU, SETEDU] = useState({});
   const [SKILL, SETSKILL] = useState([]);
   const [olreaduuser, setolreaduuser] = useState(false);
+  const [profileimg, setprofileimg] = useState(null)
 
-  console.log(SKILL)
 
   return (
     <>
@@ -37,7 +39,11 @@ function App() {
                     <Eight.Provider value={SETSKILL} >
                       <Nine.Provider value={olreaduuser} >
                         <Ten.Provider value={setolreaduuser} >
-                          <Master />
+                          <Userimg.Provider value={profileimg}>
+                            <Setusering.Provider value={setprofileimg} >
+                              <Master />
+                            </Setusering.Provider>
+                          </Userimg.Provider>
                         </Ten.Provider>
                       </Nine.Provider>
                     </Eight.Provider>
@@ -53,4 +59,4 @@ function App() {
 }
 
 export default App;
-export { First, Secand, Third, Four, Five, six, Seven, Eight,Nine,Ten};          
+export { First, Secand, Third, Four, Five, six, Seven, Eight, Nine, Ten, Userimg, Setusering };          

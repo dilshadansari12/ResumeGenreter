@@ -1,5 +1,6 @@
 import { First, Third, Five , Seven } from "../../App";
 import { useContext } from "react";
+import { Userimg } from "../../App";
 
 const OrgResume = () => {
 
@@ -7,8 +8,15 @@ const OrgResume = () => {
     const workex = useContext(Third);
     const education = useContext(Five);
     const skill = useContext(Seven);
+    const Userimge = useContext(Userimg);
+
+  
+const myPrint = ()=>{
+    window.print();
+}
+
     return (
-        <section className="justify-center  items-center flex " >
+        <section className=" flex justify-center  items-center  flex-col prints" >
             <div className="border flex justify-start items-start " style={{ width: "550px", height: "800px" }} >
 
                 <div style={{ width: "240px" }} className="border h-full"  >
@@ -22,7 +30,7 @@ const OrgResume = () => {
 
 
 
-                        <img src="img/user.png" alt="user image" width="150px" className="" style={{ marginTop: "-160px" }} />
+                        <img src={Userimge ? Userimge : "img/user.png" } alt="user image" width="150px" height="150%" className="" style={{ marginTop: "-160px" , borderRadius:"50%" }} />
 
                         <h4 className="mt-5 text-xl text-white font-sans" >{basic.name ? basic.name : "dilsahd ansari"}</h4>
                         <p className="" style={{ color: "#ffffffbd" }} >{basic.jobtitle ? basic.jobtitle : "Front-End Develper"}</p>
@@ -42,23 +50,23 @@ const OrgResume = () => {
                             <h5 className="text-white text-center pt-2 pb-5" >contact Me</h5>
 
                             <div className="flex justify-around items-center " >
-                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i class="fa-solid fa-phone"></i></span>
+                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i className="fa-solid fa-phone"></i></span>
                                 <p className="" style={{ color: " rgb(255 255 255 / 69%)" }}  >+91{basic.number ? basic.number : 7903715443}</p>
                             </div>
 
                             <div className="flex justify-around items-center mt-3" >
-                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i class="fa-solid fa-envelope"></i></span>
+                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i className="fa-solid fa-envelope"></i></span>
                                 <p className="text-sm" style={{ color: " rgb(255 255 255 / 69%)" }}  >{basic.email ? basic.email : "demo@gmail.com"}</p>
                             </div>
 
 
                             <div className="flex justify-around items-center mt-3  " >
-                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i class="fa-solid fa-globe"></i></span>
+                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i className="fa-solid fa-globe"></i></span>
                                 <p className="text-sm" style={{ color: " rgb(255 255 255 / 69%)" }}  >{basic.web ? basic.web : "developerdilshad.online"}</p>
                             </div>
 
                             <div className="flex justify-around items-center mt-3 " >
-                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i class="fa-solid fa-location-dot"></i></span>
+                                <span className="flex justify-center items-center mr-2" style={{ width: "25px", height: "25px", backgroundColor: "white", borderRadius: "50%" }} ><i className="fa-solid fa-location-dot"></i></span>
                                 <p className="text-sm" style={{ color: " rgb(255 255 255 / 69%)" }}  >{basic.location ? basic.location : "Ranchi jaharkhad"}</p>
                             </div>
 
@@ -139,7 +147,10 @@ const OrgResume = () => {
                 </div>
 
 
-
+            
+            </div>
+            <div>
+            <button className="button" style={{width:"200px"}} onClick={myPrint} > Print </button>
             </div>
         </section>
 
